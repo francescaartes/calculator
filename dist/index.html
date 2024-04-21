@@ -6,39 +6,55 @@
     <title>Calculator</title>
     <link rel="stylesheet" href="output.css">
 </head>
-<body class="flex justify-center items-center w-screen h-screen">
-    <div class="flex border border-black  md:w-1/2 md:h-3/4 p-3 items-center flex-col w-screen h-screen">
-        <div class="w-full h-1/4 flex flex-col" id="input-output">
-            <input type="text" class="focus:outline-none w-full h-1/2 text-2xl" id="input" placeholder="INPUT HERE"/>
-            <div class="w-full h-1/2 text-2xl text-right" id="output">OUTPUT HERE</div>
+<body class="flex justify-center items-center w-screen h-screen bg-zinc-950 text-stone-100 font-semibold text-2xl overflow-hidden">
+    <div class="flex md:w-1/2 md:h-3/4 p-3 items-center flex-col w-screen h-screen gap-2 border border-zinc-800 rounded-xl">
+        <div class="w-full h-1/4 flex flex-col bg-zinc-900 p-5 rounded-xl" id="input-output">
+            <input type="text" class="focus:outline-none w-full h-1/2 bg-inherit" id="input" />
+            <div class="w-full h-1/2 text-right" id="output">0</div>
         </div>
-        <div class="w-full h-full flex flex-col-reverse sm:flex-row gap-2 " id="calcu-btns">
-            <div class="w-full h-full p-1 grid grid-cols-5 grid-rows-4 gap-2" id="main-btns">
-                <button class="border border-gray-300 bg-gray-200 text-xl">7</button>
-                <button class="border border-gray-300 bg-gray-200 text-xl">8</button>
-                <button class="border border-gray-300 bg-gray-200 text-xl">9</button>
-                <button class="border border-gray-300 bg-gray-200 text-xl">DEL</button>
-                <button class="border border-gray-300 bg-gray-200 text-xl">AC</button>
-                <button class="border border-gray-300 bg-gray-200 text-xl">4</button>
-                <button class="border border-gray-300 bg-gray-200 text-xl">5</button>
-                <button class="border border-gray-300 bg-gray-200 text-xl">6</button>
-                <button class="border border-gray-300 bg-gray-200 text-xl">×</button>
-                <button class="border border-gray-300 bg-gray-200 text-xl">÷</button>
-                <button class="border border-gray-300 bg-gray-200 text-xl">1</button>
-                <button class="border border-gray-300 bg-gray-200 text-xl">2</button>
-                <button class="border border-gray-300 bg-gray-200 text-xl">3</button>
-                <button class="border border-gray-300 bg-gray-200 text-xl">+</button>
-                <button class="border border-gray-300 bg-gray-200 text-xl">-</button>
-                <button class="col-span-2 border border-gray-300 bg-gray-200 text-xl">0</button>
-                <button class="border border-gray-300 bg-gray-200 text-xl">.</button>
-                <button class="border border-gray-300 bg-gray-200 text-xl">Ans</button>
-                <button class="border border-gray-300 bg-gray-200 text-xl">=</button>
+        <div class="w-full h-full flex flex-col-reverse sm:flex-row-reverse gap-2 " id="calcu-btns">
+            <div class="w-full h-full p-1 grid grid-cols-4 grid-rows-5 gap-2 *:rounded-full *:bg-zinc-900 " id="main-btns">
+                <button class="text-red-600 active:bg-zinc-800" id="clear-btn">C</button>
+                <button class="text-green-600 active:bg-zinc-800" id="parenthesis-btn">( )</button>
+                <button class="text-green-600 active:bg-zinc-800" id="percent-btn">%</button>
+                <button class="text-3xl text-green-600 pb-2 active:bg-zinc-800" id="divide-btn">÷</button>
+                <button class="active:bg-zinc-800" id="num-btn">7</button>
+                <button class="active:bg-zinc-800" id="num-btn">8</button>
+                <button class="active:bg-zinc-800" id="num-btn">9</button>
+                <button class="text-3xl text-green-600 pb-2 active:bg-zinc-800" id="multiply-btn">×</button>
+                <button class="active:bg-zinc-800" id="num-btn">4</button>
+                <button class="active:bg-zinc-800" id="num-btn">5</button>
+                <button class="active:bg-zinc-800" id="num-btn">6</button>
+                <button class="text-3xl text-green-600 pb-2 active:bg-zinc-800" id="minus-btn">-</button>
+                <button class="active:bg-zinc-800" id="num-btn">1</button>
+                <button class="active:bg-zinc-800" id="num-btn">2</button>
+                <button class="active:bg-zinc-800" id="num-btn">3</button>
+                <button class="text-3xl text-green-600 pb-2 active:bg-zinc-800" id="add-btn">+</button>
+                <button class="active:bg-zinc-800 col-span-2" id="num-btn">0</button>
+                <button class="active:bg-zinc-800" id="point-btn">.</button>
+                <button class="text-3xl text-green-600 pb-2 active:bg-zinc-800" id="equal-btn">=</button>
             </div>
-            <div class="border border-gray-300 w-full h-full p-1 bg-gray-200" id="function-btns">
-
+            <div class="w-full h-full p-1 grid grid-cols-3 grid-rows-5 gap-2 *:rounded-full *:bg-zinc-900 text-xl" id="function-btns">
+                <button class="active:bg-zinc-800 text-base">Rad / Deg</button>
+                <button class="active:bg-zinc-800 pb-1">+/-</button>
+                <button class="active:bg-zinc-800 text-2xl">√</button>
+                <button class="active:bg-zinc-800">sin</button>
+                <button class="active:bg-zinc-800">cos</button>
+                <button class="active:bg-zinc-800">tan</button>
+                <button class="active:bg-zinc-800">ln</button>
+                <button class="active:bg-zinc-800">log</button>
+                <button class="active:bg-zinc-800">1/x</button>
+                <button class="active:bg-zinc-800">e^x</button>
+                <button class="active:bg-zinc-800">x^2</button>
+                <button class="active:bg-zinc-800">x^y</button>
+                <button class="active:bg-zinc-800">| x |</button>
+                <button class="active:bg-zinc-800 text-2xl pb-1">π</button>
+                <button class="active:bg-zinc-800 text-2xl pb-1">e</button>
+                
             </div>
         </div>
     </div>
     
 </body>
+<script src="script.js"></script>
 </html>
