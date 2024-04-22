@@ -24,6 +24,50 @@ clearBtn.addEventListener("click", clearInput);
 parenthesisBtn.addEventListener("click", addParenthesis);
 delBtn.addEventListener("click", deleteInput);
 radDegBtn.addEventListener("click", radtoDeg);
+equalBtn.addEventListener("click", calculate);
+input.addEventListener("keypress", (event => {
+    if (event.key === "Enter") {
+        calculate();
+    }
+}));
+
+function calculate() {
+    let expression = input.value;
+    
+    if (expression.match(/([^\d\(\)\×÷%]+)(?=\×|÷|%)([^\d\(\)\×÷%]+)/)) {
+        output.textContent = "ERROR";
+        return;
+      }
+
+    expression = expression.replace(/÷/g, "/")
+                            .replace(/×/g, "*")
+                            .replace(/\^(\()/g, "**$1")
+                            .replace(/\^\(2\)/g, "**2")
+                            .replace(/√\(([^)]+)\)/g, "Math.sqrt($1)")
+                            .replace(/e/g, "Math.E")
+                            .replace(/log\(([^)]+)\)/g, "Math.log10($1)")
+                            .replace(/ln\(([^)]+)\)/g, "Math.log($1)")
+                            .replace(/π/g, "Math.PI")
+                            .replace(/(\d+)%/, "($1/100)");
+
+    if (radDegBtn.value === "deg") {
+        expression = expression.replace(/sin\(([^)]+)\)/g, "Math.sin($1 * Math.PI / 180)")
+                                .replace(/cos\(([^)]+)\)/g, "Math.cos($1 * Math.PI / 180)")
+                                .replace(/tan\(([^)]+)\)/g, "Math.tan($1 * Math.PI / 180)");
+    } else {
+        expression = expression.replace(/sin\(([^)]+)\)/g, "Math.sin($1)")
+                                .replace(/cos\(([^)]+)\)/g, "Math.cos($1)")
+                                .replace(/tan\(([^)]+)\)/g, "Math.tan($1)")
+    }
+    
+    try {
+        output.textContent = eval(expression);
+        return;
+    } catch (error) {
+        output.textContent = "ERROR"
+        return;
+    }
+}
 
 function radtoDeg() {
     if (radDegBtn.value === "deg") {
@@ -69,6 +113,7 @@ function addParenthesis() {
 
 function clearInput() {
     input.value = "";
+    output.textContent = "";
     input.focus();
 }
 
