@@ -11,43 +11,43 @@
     <div class="flex md:w-1/2 md:h-3/4 p-3 items-center flex-col w-screen h-screen gap-2 border border-zinc-800 rounded-xl">
         <div class="w-full h-1/4 flex flex-col bg-zinc-900 p-5 rounded-xl" id="input-output">
             <input type="text" class="focus:outline-none w-full h-1/2 bg-inherit" id="input" />
-            <div class="w-full h-1/2 text-right" id="output">0</div>
+            <div class="w-full h-1/2 text-right" id="output"></div>
         </div>
-        <div class="w-full h-full flex flex-col-reverse sm:flex-row-reverse gap-2" id="calcu-btns">
-            <div class="w-full h-full p-1 grid grid-cols-5 grid-rows-4 gap-2 *:rounded-full *:bg-zinc-900" id="main-btns">
-                <button class="active:bg-zinc-800" id="num-btn" value="7">7</button>
-                <button class="active:bg-zinc-800" id="num-btn" value="8">8</button>
-                <button class="active:bg-zinc-800" id="num-btn" value="9">9</button>
+        <div class="w-full h-full flex flex-col-reverse sm:flex-row-reverse" id="calcu-btns">
+            <div class="w-full h-full p-1 grid grid-cols-5 grid-rows-4 gap-2 *:rounded-xl *:bg-zinc-900" id="main-btns">
+                <button class="active:bg-zinc-800 btn" id="num-btn" value="7">7</button>
+                <button class="active:bg-zinc-800 btn" id="num-btn" value="8">8</button>
+                <button class="active:bg-zinc-800 btn" id="num-btn" value="9">9</button>
                 <button class="text-red-600 active:bg-zinc-800" id="del-btn"><i class="fa-solid fa-caret-left"></i></button>
                 <button class="text-red-600 active:bg-zinc-800 text-xl" id="clear-btn">AC</button>
-                <button class="active:bg-zinc-800" id="num-btn" value="4">4</button>
-                <button class="active:bg-zinc-800" id="num-btn" value="5">5</button>
-                <button class="active:bg-zinc-800" id="num-btn" value="6">6</button>
-                <button class="text-3xl text-green-600 pb-2 active:bg-zinc-800" id="divide-btn" value="÷">÷</button>
-                <button class="text-3xl text-green-600 pb-2 active:bg-zinc-800" id="multiply-btn" value="×">×</button>
-                <button class="active:bg-zinc-800" id="num-btn" value="1">1</button>
-                <button class="active:bg-zinc-800" id="num-btn" value="2">2</button>
-                <button class="active:bg-zinc-800" id="num-btn" value="3">3</button>
-                <button class="text-3xl text-green-600 pb-2 active:bg-zinc-800" id="add-btn" value="+">+</button>
-                <button class="text-3xl text-green-600 pb-2 active:bg-zinc-800" id="minus-btn" value="-">-</button>
-                <button class="active:bg-zinc-800 col-span-2" id="num-btn" value="0">0</button>
-                <button class="active:bg-zinc-800" id="point-btn" value=".">.</button>
-                <button class="text-green-600 active:bg-zinc-800" id="percent-btn" value="%">%</button>
-                <button class="text-3xl text-green-600 pb-2 active:bg-zinc-800" id="equal-btn">=</button>
+                <button class="active:bg-zinc-800 btn" id="num-btn" value="4">4</button>
+                <button class="active:bg-zinc-800 btn" id="num-btn" value="5">5</button>
+                <button class="active:bg-zinc-800 btn" id="num-btn" value="6">6</button>
+                <button class="text-3xl text-green-600 pb-2 active:bg-zinc-800 btn" id="divide-btn" value="÷">÷</button>
+                <button class="text-3xl text-green-600 pb-2 active:bg-zinc-800 btn" id="multiply-btn" value="×">×</button>
+                <button class="active:bg-zinc-800 btn" id="num-btn" value="1">1</button>
+                <button class="active:bg-zinc-800 btn" id="num-btn" value="2">2</button>
+                <button class="active:bg-zinc-800 btn" id="num-btn" value="3">3</button>
+                <button class="text-3xl text-green-600 pb-2 active:bg-zinc-800 btn" id="add-btn" value="+">+</button>
+                <button class="text-3xl text-green-600 pb-2 active:bg-zinc-800 btn" id="minus-btn" value="-">-</button>
+                <button class="active:bg-zinc-800 btn col-span-2" id="num-btn" value="0">0</button>
+                <button class="active:bg-zinc-800 btn" id="point-btn" value=".">.</button>
+                <button class="text-green-600 active:bg-zinc-800 btn" id="percent-btn" value="%">%</button>
+                <button class="text-3xl text-green-600 pb-2 active:bg-zinc-800 btn" id="equal-btn">=</button>
             </div>
-            <div class="w-full h-full p-1 grid grid-cols-3 grid-rows-4 gap-2 *:rounded-full *:bg-zinc-900 text-xl sm:w-3/5" id="function-btns">
-                <button class="active:bg-zinc-800 text-base" id="rad-deg-btn" value="deg">Deg</button>
-                <button class="active:bg-zinc-800" id="parenthesis-btn">( )</button>
-                <button class="active:bg-zinc-800 text-2xl" id="sqr-btn">√</button>
-                <button class="active:bg-zinc-800" id="sin-btn">sin</button>
-                <button class="active:bg-zinc-800" id="cos-btn">cos</button>
-                <button class="active:bg-zinc-800" id="tan-btn">tan</button>
-                <button class="active:bg-zinc-800" id="ln-btn">ln</button>
-                <button class="active:bg-zinc-800" id="log-btn">log</button>
-                <button class="active:bg-zinc-800 text-2xl pb-1">e</button>
-                <button class="active:bg-zinc-800">x^2</button>
-                <button class="active:bg-zinc-800">x^y</button>
-                <button class="active:bg-zinc-800 text-2xl pb-1">π</button>
+            <div class="w-full h-full p-1 grid grid-cols-3 grid-rows-4 gap-2 *:rounded-xl *:bg-zinc-900 text-xl sm:w-3/5" id="function-btns">
+                <button class="active:bg-zinc-800 text-lg text-green-600" id="rad-deg-btn" value="deg">Deg</button>
+                <button class="active:bg-zinc-800 btn" id="parenthesis-btn">( )</button>
+                <button class="active:bg-zinc-800 btn text-2xl" id="sqr-btn" value="√(">√</button>
+                <button class="active:bg-zinc-800 btn" id="sin-btn" value="sin(">sin</button>
+                <button class="active:bg-zinc-800 btn" id="cos-btn" value="cos(">cos</button>
+                <button class="active:bg-zinc-800 btn" id="tan-btn" value="tan(">tan</button>
+                <button class="active:bg-zinc-800 btn" id="ln-btn" value="ln(">ln</button>
+                <button class="active:bg-zinc-800 btn" id="log-btn" value="log(">log</button>
+                <button class="active:bg-zinc-800 btn text-2xl pb-1" value="e">e</button>
+                <button class="active:bg-zinc-800 btn" value="^(2)">x^2</button>
+                <button class="active:bg-zinc-800 btn" value="^(">x^y</button>
+                <button class="active:bg-zinc-800 btn text-2xl pb-1" value="π">π</button>
                 
             </div>
         </div>

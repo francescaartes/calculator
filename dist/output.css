@@ -602,10 +602,6 @@ video {
   grid-template-rows: repeat(4, minmax(0, 1fr));
 }
 
-.grid-rows-5 {
-  grid-template-rows: repeat(5, minmax(0, 1fr));
-}
-
 .flex-col {
   flex-direction: column;
 }
@@ -701,8 +697,22 @@ video {
   line-height: 1.75rem;
 }
 
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .font-semibold {
   font-weight: 600;
+}
+
+.font-extrabold {
+  font-weight: 800;
 }
 
 .text-green-600 {
@@ -720,8 +730,8 @@ video {
   color: rgb(245 245 244 / var(--tw-text-opacity));
 }
 
-.\*\:rounded-full > * {
-  border-radius: 9999px;
+.\*\:rounded-xl > * {
+  border-radius: 0.75rem;
 }
 
 .\*\:bg-zinc-900 > * {
