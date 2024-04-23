@@ -25,6 +25,7 @@ parenthesisBtn.addEventListener("click", addParenthesis);
 delBtn.addEventListener("click", deleteInput);
 radDegBtn.addEventListener("click", radtoDeg);
 equalBtn.addEventListener("click", calculate);
+input.addEventListener("keyup", () => input.removeAttribute('readonly'))
 input.addEventListener("keypress", (event => {
     if (event.key === "Enter") {
         calculate();
@@ -127,5 +128,6 @@ function displayInput(event) {
         input.focus();
         const cursorPos = start + buttonValue.length;
         input.setSelectionRange(cursorPos, cursorPos);
+        event.preventDefault();
     }
 }
